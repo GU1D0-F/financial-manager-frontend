@@ -16,7 +16,7 @@ import { useLanguage } from '../../hooks/useLanguage'
 const Settings: React.FC = () =>  {
   const { t } = useTranslation()
   const { currentLanguage, changeLanguage } = useLanguage()
-  const { setColorMode } = useColorMode()
+  const { colorMode, setColorMode } = useColorMode()
 
   const currencyOptions = [
     { value: 'USD', label: '($) USD' },
@@ -24,13 +24,11 @@ const Settings: React.FC = () =>  {
   ];
 
   const languageOptions = [
-    { value: 'en-US', label: 'English' },
+    { value: 'en', label: 'English' },
     { value: 'pt-BR', label: 'Português' },
   ];
 
-  const handleThemeChange = (value: string) => {
-    setColorMode(value);
-  };
+  console.log('currentLanguage', currentLanguage)
 
   return (
     <Box w={{ base: 330, md: 440, lg: 550 }}>
@@ -57,7 +55,8 @@ const Settings: React.FC = () =>  {
             size='lg'
             colorScheme= 'purple'
             ml={{ base: 35, md: 110, lg: 110 }}
-            onChange={handleThemeChange}
+            onChange={(val) => setColorMode(val as 'light'|'dark')}
+            value={colorMode}      
           >
             <Stack spacing={{ base: 0, lg: 20}} direction='row'>
               <Radio

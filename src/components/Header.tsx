@@ -59,6 +59,7 @@ const Header: React.FC = () => {
       alignItems="center"
     >
       <Text
+        as="div"
         fontWeight='bold'
         fontSize={{ base: 'md', md:'lg' }}
       >
@@ -72,7 +73,7 @@ const Header: React.FC = () => {
       <Avatar
         size='md'
         bg='purple.500'
-        src='https://bit.ly/broken-link'
+        // src='https://bit.ly/broken-link' TODO: Need review
       />
       <Text
         fontWeight='bold'

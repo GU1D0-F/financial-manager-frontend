@@ -45,6 +45,7 @@ export const GoalProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
 
     try {
+      console.log(user);
       const response = await api.get('/goals/', {
         headers: getAuthHeaders(),
         params: { userId: user?.id }

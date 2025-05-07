@@ -178,7 +178,7 @@ const Settings: React.FC = () =>  {
                   <Avatar
                     size={{ base: 'lg', lg: 'xl' }}
                     bg='purple.500'
-                    src='https://bit.ly/broken-link'
+                    // src='https://bit.ly/broken-link' TODO: Review
                   />
                 </GridItem>
                 <GridItem colSpan={2}>
